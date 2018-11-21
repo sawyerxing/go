@@ -1,16 +1,16 @@
-一些设计思想
+## 一些设计思想 ##
 什么东西都去GOPATH下面找比较好
 什么东西都去github下面找比较方便
 
-信息
+## 信息 ##
 阅读文档
 https://godoc.org/
 
-安装
+## 安装 ##
 https://golang.org/dl/
 setpath
 
-基础
+## 基础 ##
 1. 所有go语言编译的可执行程序都必须有一个名叫main的包，并且里面有main()
 2. 查看包的帮助文档
 godoc fmt | less
