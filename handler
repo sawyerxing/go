@@ -1,0 +1,59 @@
+#!/usr/bin/python3
+# -*- coding: UTF-8 -*- 
+
+class CZHandler:
+    def __init__(self):
+        pass
+
+    def handleGrepAB(self):
+        filenameA="A.txt"
+        filenameB="B.txt"
+        outputfile = "C.txt"
+        fileA = open(filenameA, "r")
+        filelinesA = fileA.readlines()
+
+        fileB = open(filenameB, 'r')
+        filelinesB = fileB.readlines()
+
+        dictA = dict()
+        for eachline in filelinesA :
+            # remove the last '\n'
+            eachlinenonewline = eachline.strip()
+            dictA[eachlinenonewline] = ''
+
+        print(dictA)
+
+        for eachlineB in filelinesB:
+            # remove the last '\n'
+            eachB=eachlineB.strip()
+            for eachlineA in filelinesA:
+                eachA=eachlineA.strip()
+                eachAArray = eachA.split(',')
+                for eachelement in eachAArray:
+                    if eachelement==eachB:
+                        #found it
+                        if dictA[eachA]=='':
+                            #donot add ',' at the beginning
+                            dictA[eachA]=eachelement
+                        else:
+                           dictA[eachA]=dictA[eachA]+','+eachelement     
+        
+        print(dictA)
+        fileA.close()
+        fileB.close()
+
+        #write to output file
+        outfile=open(outputfile, "w+")
+        for k,v in dictA.items():
+            if v=='':
+                outfile.write(k+" NA")
+            else:
+                outfile.write(k+" "+v)
+            outfile.write("\n")
+        outfile.close()
+
+if __name__ == "__main__":
+    print("V1.0")
+
+    czHandler = CZHandler()
+    czHandler.handleGrepAB()
