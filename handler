@@ -4,7 +4,35 @@
 class CZHandler:
     def __init__(self):
         pass
-
+    
+    #从B.txt里面遍历，找到在A.txt中的位置，放在后面，没有就打印NA
+    #A.txt
+    #1,2,3,4,5,6
+    #33,22,44,55,66,69
+    #31,21
+    #86
+    #87, 88,89
+    #111,222,333
+    
+    #B.txt
+    #88
+    #89
+    #90
+    #5
+    #6
+    #33
+    #22
+    #44
+    #55
+    #31
+    
+    #C.txt
+    #1,2,3,4,5,6 5,6
+    #33,22,44,55,66,69 33,22,44,55
+    #31,21 31
+    #86 NA
+    #87,88,89 88,89
+    #111,222,333 NA
     def handleGrepAB(self):
         filenameA="A.txt"
         filenameB="B.txt"
@@ -36,7 +64,7 @@ class CZHandler:
                             #donot add ',' at the beginning
                             dictA[eachA]=eachelement
                         else:
-                           dictA[eachA]=dictA[eachA]+','+eachelement     
+                            dictA[eachA]=dictA[eachA]+','+eachelement     
         
         print(dictA)
         fileA.close()
