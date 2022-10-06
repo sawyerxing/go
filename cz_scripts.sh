@@ -3,7 +3,7 @@
 #go through each line
 #if contains m, then append column m
 #if contains v, then append column v
-#if contains both m and n, then append v
+#if contains both m and v, then append both
 #example:
 #input.tsv
 #BMXMM05v177390,BMXMM05m850489,BMXMF05m1502543,BMXFM08v283599p1
