@@ -24,7 +24,6 @@ function check_m_v() {
 	local outputfile="./outputfile"
 	for eachline in `cat ${inputfile}` 
 	do
-
 		if [[ ${eachline} =~ "m" ]] && [[ ${eachline} =~ "v" ]] ; then
 			echo "${eachline} both" >> ${outputfile}
 		elif [[ ${eachline} =~ "m" ]] ; then
