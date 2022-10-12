@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #go through each line
 #if contains m, then append column m
